@@ -13,3 +13,6 @@ Progetto di Sentiment Analysis con CI/CD e monitoraggio.
 - Prometheus
 - Grafana
 - GitHub
+## CI/CD
+
+Pipeline automatizzata con Jenkins, Docker, Prometheus e Grafana.
