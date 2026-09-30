@@ -8,10 +8,10 @@ pipeline {
             steps {
                 echo 'Esecuzione dei test pytest...'
 
-                dir('/workspace') {
+                
                     sh 'python3 -m pip install --break-system-packages -r requirements.txt'
                     sh 'python3 -m pytest -v'
-                }
+                
             }
         }
 
@@ -19,9 +19,9 @@ pipeline {
             steps {
                 echo 'Creazione dell\'immagine Docker...'
 
-                dir('/workspace') {
+                
                     sh 'docker build -t sentiment-api:jenkins .'
-                }
+                
             }
         }
 
