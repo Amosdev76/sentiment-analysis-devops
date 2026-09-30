@@ -15,6 +15,33 @@ pipeline {
             }
         }
 
+        stage('Docker Build') {
+            steps {
+                echo 'Creazione dell\'immagine Docker...'
+
+                dir('/workspace') {
+                    sh 'docker build -t sentiment-api:jenkins .'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploy dell\'API...'
+
+                sh '''
+                    docker stop sentiment-api || true
+                    docker rm sentiment-api || true
+
+                    docker run -d \
+                        --name sentiment-api \
+                        --network sentiment-analysis-devops_sentiment-network \
+                        -p 5000:5000 \
+                        sentiment-api:jenkins
+                '''
+            }
+        }
+
     }
 
     post {
