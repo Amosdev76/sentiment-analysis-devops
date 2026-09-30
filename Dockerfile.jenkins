@@ -1,0 +1,16 @@
+
+FROM docker:cli AS docker-cli
+
+FROM jenkins/jenkins:lts
+
+USER root
+
+# Copia solamente il Docker CLI
+COPY --from=docker-cli /usr/local/bin/docker /usr/local/bin/docker
+
+# Python e strumenti necessari per i test
+RUN apt-get update \
+    && apt-get install -y python3 python3-pip python3-venv \
+    && rm -rf /var/lib/apt/lists/*
+
+USER jenkins
