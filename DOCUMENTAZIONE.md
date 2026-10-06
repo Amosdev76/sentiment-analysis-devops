@@ -1,6 +1,8 @@
 # Documentazione del progetto
 ## Deploy e monitoraggio di un modello di Sentiment Analysis per recensioni
 
+NOTA BENE per il tutor: attivare l' ambiente virtuale con il file requirements.txt
+
 ### 1. Descrizione del progetto
 
 Il progetto realizza un servizio di **Sentiment Analysis** per classificare recensioni testuali e integra il modello in una API web Flask.
