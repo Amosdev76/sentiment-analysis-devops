@@ -71,7 +71,7 @@ sentiment-analysis-devops/
 └── test_model.py
 ```
 
-I file di ambiente virtuale, cache Python e altri file temporanei non sono necessari per la consegna e sono stati esclusi dall'archivio finale.
+
 
 ---
 
